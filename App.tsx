@@ -205,7 +205,9 @@ function HomeScrean({navigation}){
           <Stack.Screen name="Menu" component={Menu} options={{title: menu}} />
           <Stack.Screen name="Notice" component={Notice} options={{title: notice}} />
           <Stack.Screen name="Rules" component={Rules} options={{title: rules}} />
-          <Stack.Screen name="Inquiries" component={Inquiries} options={{title: inquiries}} />
+          <Stack.Screen name="Inquiries" options={{title: inquiries}} >
+            {props => <Inquiries {...props} langData={languge} />}
+          </Stack.Screen>
         </Stack.Navigator>
       </NavigationContainer>
    </Provider>
@@ -229,17 +231,6 @@ const styles = StyleSheet.create({
     justifyContent:"flex-end",
     alignItems:"center",
     flexDirection: 'row'
-  },
-  langbut:{
-    width:70,
-    height:30,
-    borderWidth:2,
-    borderRadius:10,
-    marginRight:10,
-    borderStyle:"solid",
-    borderColor:"white",
-    justifyContent: "center",
-    alignItems: "center"
   },
   logoArea: {
     width:"100%",

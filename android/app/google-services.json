@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "198833981531",
+    "project_id": "busanuni-5d007",
+    "storage_bucket": "busanuni-5d007.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:198833981531:android:943983081b75fa289ed77e",
+        "android_client_info": {
+          "package_name": "com.practice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "198833981531-vgv02nucadhh1ka42sfi8tot1h07ilua.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyF3v7jke-XH_CuSHUyFztgYFBrJXDcbU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "198833981531-vgv02nucadhh1ka42sfi8tot1h07ilua.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

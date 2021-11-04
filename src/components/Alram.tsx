@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import { Platform, ScrollView, StyleSheet, Text, View} from "react-native";
 import ToggleSwitch from 'toggle-switch-react-native';
 
@@ -6,11 +6,16 @@ import AlramList from "./AlramList";
 
 import listData from '../notification.json';
 import customData from '../../config.json';
+import { MemoryContext } from "../../src/contexts/memory.context";
 
-const Alram = ({langData}) => {
+const Alram = () => {
 
-  const pushTitle = langData == "ko" ? customData.kor.sub_page1_t1 : customData.eng.sub_page1_t1;
-  const ListTitle = langData == "ko" ? customData.kor.sub_page1_t2 : customData.eng.sub_page1_t2;
+  const memoryContext = useContext(MemoryContext);
+
+  const languge = memoryContext.lang;
+
+  const pushTitle = languge == "kor" ? customData.kor.sub_page1_t1 : customData.eng.sub_page1_t1;
+  const ListTitle = languge == "kor" ? customData.kor.sub_page1_t2 : customData.eng.sub_page1_t2;
   
   const [on, setOn] = useState(true);
 

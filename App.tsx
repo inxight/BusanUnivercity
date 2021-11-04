@@ -60,15 +60,12 @@ const App = () => {
         <Stack.Navigator initialRouteName="Home">
           {/* <Stack.Screen options={{ headerShown: false }} name="home" component={HomeScrean}/> */}
           <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
-          <Stack.Screen name="Alram" options={{title: notification }} >
-              {props => <Alram {...props} langData={languge} />}
-          </Stack.Screen>
+          <Stack.Screen name="Alram" component={Alram} options={{title: notification }} />
           <Stack.Screen name="Menu" component={Menu} options={{title: menu}} />
           <Stack.Screen name="Notice" component={Notice} options={{title: notice}} />
           <Stack.Screen name="Rules" component={Rules} options={{title: rules}} />
-          <Stack.Screen name="Inquiries" options={{title: inquiries}} >
-            {props => <Inquiries {...props} langData={languge} />}
-          </Stack.Screen>
+          <Stack.Screen name="Inquiries" component={Inquiries} options={{title: inquiries}}/>
+
         </Stack.Navigator>
       </NavigationContainer>
    </MemoryContextProvider>

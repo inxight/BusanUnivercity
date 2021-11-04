@@ -3,25 +3,29 @@ import { Platform, StyleSheet, Text, View, TouchableOpacity, Button} from "react
 import customData from '../../config.json';
 
 import {Linking} from "react-native";
-import { MemoryContext } from "../contexts/memory.context";
+import { MemoryContext } from "../../src/contexts/memory.context";
 
-const Inquiries = ({langData}) => {
 
-    const inquTitleFir = langData == "ko" ? customData.kor.sub_page5_t1 : customData.eng.sub_page5_t1;
-    const inquInfo1 = langData == "ko" ? customData.kor.sub_page5_t1_t1 : customData.eng.sub_page5_t1_t1;
-    const inquInfo2 = langData == "ko" ? customData.kor.sub_page5_t1_t2 : customData.eng.sub_page5_t1_t2;
 
-    const inquTitleSec = langData == "ko" ? customData.kor.sub_page4_t1 : customData.eng.sub_page4_t1;
+const Inquiries = () => {
 
-    const inquButtonFir = langData == "ko" ? customData.kor.sub_page4_b1 : customData.eng.sub_page4_b1;
-    const inquButtonSec = langData == "ko" ? customData.kor.sub_page4_b2 : customData.eng.sub_page4_b2;
-    const inquButtonThr = langData == "ko" ? customData.kor.sub_page4_b3 : customData.eng.sub_page4_b3;
+  const memoryContext = useContext(MemoryContext);
 
-    const inquButInfoFir = langData == "ko" ? customData.kor.sub_page4_b1_t : customData.eng.sub_page4_b1_t;
-    const inquButInfoSec = langData == "ko" ? customData.kor.sub_page4_b2_t : customData.eng.sub_page4_b2_t;
-    const inquButInfoThr = langData == "ko" ? customData.kor.sub_page4_b2_t : customData.eng.sub_page4_b3_t;
+  const languge = memoryContext.lang;
 
-    const memoryContext = useContext(MemoryContext);
+    const inquTitleFir = languge == "kor" ? customData.kor.sub_page5_t1 : customData.eng.sub_page5_t1;
+    const inquInfo1 = languge == "kor" ? customData.kor.sub_page5_t1_t1 : customData.eng.sub_page5_t1_t1;
+    const inquInfo2 = languge == "kor" ? customData.kor.sub_page5_t1_t2 : customData.eng.sub_page5_t1_t2;
+
+    const inquTitleSec = languge == "kor" ? customData.kor.sub_page4_t1 : customData.eng.sub_page4_t1;
+
+    const inquButtonFir = languge == "kor" ? customData.kor.sub_page4_b1 : customData.eng.sub_page4_b1;
+    const inquButtonSec = languge == "kor" ? customData.kor.sub_page4_b2 : customData.eng.sub_page4_b2;
+    const inquButtonThr = languge == "kor" ? customData.kor.sub_page4_b3 : customData.eng.sub_page4_b3;
+
+    const inquButInfoFir = languge == "kor" ? customData.kor.sub_page4_b1_t : customData.eng.sub_page4_b1_t;
+    const inquButInfoSec = languge == "kor" ? customData.kor.sub_page4_b2_t : customData.eng.sub_page4_b2_t;
+    const inquButInfoThr = languge == "kor" ? customData.kor.sub_page4_b2_t : customData.eng.sub_page4_b3_t;
 
   return (
     <View style={styles.container}>

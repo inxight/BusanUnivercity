@@ -1,10 +1,8 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useEffect,useContext, useState } from "react";
 import { WebView } from 'react-native-webview';
 import { Platform,ImageBackground, StyleSheet, Text, View, Image, Button,TouchableOpacity, SafeAreaView} from "react-native";
-import SplashScreen from 'react-native-splash-screen';
-import { NavigationContainer } from '@react-navigation/native'; 
-import { createStackNavigator } from '@react-navigation/stack'; 
 
+import { MemoryContext } from "../../src/contexts/memory.context";
 
 // const instructions = Platform.select({
 //   ios: `Press Cmd+R to reload,\n Cmd+D or shake for dev menu`,
@@ -17,6 +15,10 @@ import { createStackNavigator } from '@react-navigation/stack';
 // })
 
 const Notice: FC = () => {
+
+  const memoryContext = useContext(MemoryContext);
+
+  const languge = memoryContext.lang;
 
   useEffect(()=>{
   },[]);

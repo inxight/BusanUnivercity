@@ -26,14 +26,6 @@ const Inquiries = ({langData}) => {
 
   const [on, setOn] = useState(true);
 
-  const noticeList = listData.list.map(list=>{
-    return(
-      <>
-      <AlramList list={list} key={list.title} />
-      </>
-    )
-  });
-
   return (
     <View style={styles.container}>
       <View style={styles.inquHead}>

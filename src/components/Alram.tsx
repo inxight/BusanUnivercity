@@ -15,10 +15,10 @@ const Alram = ({langData}) => {
 
   const [on, setOn] = useState(true);
 
-  const noticeList = listData.list.map(list=>{
+  const noticeList = listData.list.map((list,idx)=>{
     return(
       <>
-      <AlramList list={list} key={list.date}/>
+      <AlramList list={list} key={idx}/>
       </>
     )
   });

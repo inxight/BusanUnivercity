@@ -1,11 +1,8 @@
-import React, { FC, useEffect, useState } from "react";
-import { Platform,ImageBackground, ScrollView, StyleSheet, Text, View, TouchableOpacity} from "react-native";
-import ToggleSwitch from 'toggle-switch-react-native';
-
-import AlramList from "./AlramList";
-
-import listData from '../notification.json';
+import React, {useState } from "react";
+import { Platform, StyleSheet, Text, View, TouchableOpacity, Button} from "react-native";
 import customData from '../../config.json';
+
+import {Linking} from "react-native";
 
 const Inquiries = ({langData}) => {
 
@@ -35,18 +32,19 @@ const Inquiries = ({langData}) => {
       </View>
       <View style={styles.inquBody}>
         <Text style={styles.inquTitle}>{inquTitleSec}</Text>
-        <TouchableOpacity activeOpacity={0.9} style={styles.inquButton}>
+        <TouchableOpacity activeOpacity={0.9} onPress={()=>Linking.openURL("https://dorm.pusan.ac.kr/dorm/bbs/list04/20000603")} style={styles.inquButton}>
             <Text style={styles.inquButtonText}>{inquButtonFir}</Text>
         </TouchableOpacity>
         <Text style={styles.btnInquInfo}>{inquButInfoFir}</Text>
-        <TouchableOpacity activeOpacity={0.9} style={styles.inquButton}>
+        <TouchableOpacity activeOpacity={0.9} onPress={()=>Linking.openURL("https://dorm.pusan.ac.kr/dorm/bbs/list04/20000604")} style={styles.inquButton}>
             <Text style={styles.inquButtonText}>{inquButtonSec}</Text>
         </TouchableOpacity>
         <Text style={styles.btnInquInfo}>{inquButInfoSec}</Text>
-        <TouchableOpacity activeOpacity={0.9} style={styles.inquButton}>
+        <TouchableOpacity onPress={()=>Linking.openURL("tel:123123")} activeOpacity={0.9} style={styles.inquButton} >
             <Text style={styles.inquButtonText}>{inquButtonThr}</Text>
         </TouchableOpacity>
         <Text style={styles.btnInquInfo}>{inquButInfoThr}</Text>
+        
       </View>
     </View>
   );

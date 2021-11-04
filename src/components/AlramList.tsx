@@ -22,12 +22,12 @@ const AlramList = ({list}) => {
   return (
     <>
     <View style={styles.listContaner}>
+      <TouchableWithoutFeedback onPress={hidefunc}>
         <View style={styles.listTitleArea}>
-           <Text style={styles.listTitle}>{list.title}</Text>
-           <TouchableWithoutFeedback style={{marginLeft:"auto",flex:1}} onPress={hidefunc}>
+            <Text style={styles.listTitle}>{list.title}</Text>
             <Text style={styles.moreInfo}>{hideChar}</Text>
-           </TouchableWithoutFeedback>
         </View>
+      </TouchableWithoutFeedback>
         { hide &&
         <View style={styles.listContentsArea}>
             <Text style={styles.listDate}>{list.date}</Text>

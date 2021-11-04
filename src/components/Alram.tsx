@@ -1,5 +1,5 @@
-import React, { FC, useEffect, useState } from "react";
-import { Platform,ImageBackground, ScrollView, StyleSheet, Text, View} from "react-native";
+import React, { useState } from "react";
+import { Platform, ScrollView, StyleSheet, Text, View} from "react-native";
 import ToggleSwitch from 'toggle-switch-react-native';
 
 import AlramList from "./AlramList";
@@ -15,10 +15,10 @@ const Alram = ({langData}) => {
 
   const [on, setOn] = useState(true);
 
-  const noticeList = listData.list.map((list,idx)=>{
+  const noticeList = listData.list.map((list)=>{
     return(
       <>
-      <AlramList list={list} key={idx}/>
+      <AlramList list={list} key={list.idx}/>
       </>
     )
   });

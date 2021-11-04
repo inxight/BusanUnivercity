@@ -2,13 +2,19 @@ import React, { FC, useEffect, useState } from "react";
 import { Platform,ImageBackground, ScrollView, StyleSheet, Text, View, Button, TouchableOpacity, TouchableWithoutFeedback} from "react-native";
 
 
-const AlramList = ({list}) => {
+const AlramList = (props) => {
 
+  const list = props.list;
+  const listOn = props.listOn;
+  
+  const [hide, setHide] = useState<Boolean>(listOn);
 
-  const [hide, setHide] = useState<Boolean>(false);
   const [hideChar, setHideChar] = useState<String>('▼');
 
   const hidefunc = () => {
+    
+      props.listOnFunc(false);
+
       setHide(value => !value);
 
       if(hide == false){

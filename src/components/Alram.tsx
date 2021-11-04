@@ -11,13 +11,18 @@ const Alram = ({langData}) => {
 
   const pushTitle = langData == "ko" ? customData.kor.sub_page1_t1 : customData.eng.sub_page1_t1;
   const ListTitle = langData == "ko" ? customData.kor.sub_page1_t2 : customData.eng.sub_page1_t2;
-
-
+  
   const [on, setOn] = useState(true);
+
+  const [listOn, setListOn] = useState(false);
+
+  const listOnFunc = (toggle) => {
+    setListOn(toggle);
+  }
 
   const noticeList = listData.list.map((list)=>{
     return(
-      <AlramList key={(list.idx).toString()} list={list} />
+      <AlramList key={(list.idx).toString()} list={list} listOn={listOn} listOnFunc={listOnFunc} />
     );
   });
 

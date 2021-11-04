@@ -1,8 +1,9 @@
-import React, {useState } from "react";
+import React, {useContext, useState } from "react";
 import { Platform, StyleSheet, Text, View, TouchableOpacity, Button} from "react-native";
 import customData from '../../config.json';
 
 import {Linking} from "react-native";
+import { MemoryContext } from "../contexts/memory.context";
 
 const Inquiries = ({langData}) => {
 
@@ -20,6 +21,7 @@ const Inquiries = ({langData}) => {
     const inquButInfoSec = langData == "ko" ? customData.kor.sub_page4_b2_t : customData.eng.sub_page4_b2_t;
     const inquButInfoThr = langData == "ko" ? customData.kor.sub_page4_b2_t : customData.eng.sub_page4_b3_t;
 
+    const memoryContext = useContext(MemoryContext);
 
   return (
     <View style={styles.container}>
@@ -30,7 +32,7 @@ const Inquiries = ({langData}) => {
       </View>
       <View style={styles.inquBody}>
         <Text style={styles.inquTitle}>{inquTitleSec}</Text>
-        <TouchableOpacity activeOpacity={0.9} onPress={()=>Linking.openURL("https://dorm.pusan.ac.kr/dorm/bbs/list04/20000603")} style={styles.inquButton}>
+        <TouchableOpacity activeOpacity={0.9} onPress={()=>{Linking.openURL("https://dorm.pusan.ac.kr/dorm/bbs/list04/20000603")}} style={styles.inquButton}>
             <Text style={styles.inquButtonText}>{inquButtonFir}</Text>
         </TouchableOpacity>
         <Text style={styles.btnInquInfo}>{inquButInfoFir}</Text>

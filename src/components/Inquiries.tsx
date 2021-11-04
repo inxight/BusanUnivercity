@@ -21,8 +21,6 @@ const Inquiries = ({langData}) => {
     const inquButInfoThr = langData == "ko" ? customData.kor.sub_page4_b2_t : customData.eng.sub_page4_b3_t;
 
 
-  const [on, setOn] = useState(true);
-
   return (
     <View style={styles.container}>
       <View style={styles.inquHead}>
@@ -40,7 +38,7 @@ const Inquiries = ({langData}) => {
             <Text style={styles.inquButtonText}>{inquButtonSec}</Text>
         </TouchableOpacity>
         <Text style={styles.btnInquInfo}>{inquButInfoSec}</Text>
-        <TouchableOpacity onPress={()=>Linking.openURL("tel:123123")} activeOpacity={0.9} style={styles.inquButton} >
+        <TouchableOpacity onPress={()=>Linking.openURL("tel:051-123-1234")} activeOpacity={0.9} style={styles.inquButton} >
             <Text style={styles.inquButtonText}>{inquButtonThr}</Text>
         </TouchableOpacity>
         <Text style={styles.btnInquInfo}>{inquButInfoThr}</Text>

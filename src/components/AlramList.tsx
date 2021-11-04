@@ -20,7 +20,6 @@ const AlramList = ({list}) => {
   }
 
   return (
-    <>
     <View style={styles.listContaner}>
       <TouchableWithoutFeedback onPress={hidefunc}>
         <View style={styles.listTitleArea}>
@@ -35,7 +34,6 @@ const AlramList = ({list}) => {
         </View>
         }
       </View>
-    </>
   );
 };
 export default AlramList;

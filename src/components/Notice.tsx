@@ -5,7 +5,6 @@ import SplashScreen from 'react-native-splash-screen';
 import { NavigationContainer } from '@react-navigation/native'; 
 import { createStackNavigator } from '@react-navigation/stack'; 
 
-import listData from '../notification.json';
 
 // const instructions = Platform.select({
 //   ios: `Press Cmd+R to reload,\n Cmd+D or shake for dev menu`,
@@ -20,7 +19,6 @@ import listData from '../notification.json';
 const Notice: FC = () => {
 
   useEffect(()=>{
-    console.log(listData.list[0].title)
   },[]);
 
   return (

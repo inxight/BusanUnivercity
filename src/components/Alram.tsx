@@ -17,10 +17,8 @@ const Alram = ({langData}) => {
 
   const noticeList = listData.list.map((list)=>{
     return(
-      <>
-      <AlramList list={list} key={list.idx}/>
-      </>
-    )
+      <AlramList key={(list.idx).toString()} list={list} />
+    );
   });
 
   return (
@@ -29,13 +27,12 @@ const Alram = ({langData}) => {
       <View style={styles.pushSettingCon}>
         <Text style={styles.pushSetTitle}>{pushTitle}</Text>
         <ToggleSwitch style={styles.toggle} isOn={on} size="medium" onToggle={() => {setOn(value => !value) }} />
-        
       </View>
       <View style={styles.pushSettingCon}>
         <Text style={styles.pushSetTitle}>{ListTitle}</Text>
       </View>
       <ScrollView>
-      {noticeList}
+        {noticeList}
       </ScrollView>
     </View>
     </>
